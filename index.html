@@ -83,6 +83,7 @@
         /* Контейнер для изображений */
         .image-container {
             display: flex;
+            flex-wrap: wrap; /* Позволяет изображениям переноситься на следующую строку */
             justify-content: space-between;
             margin-top: 40px;
             width: 100%;
@@ -96,6 +97,7 @@
             padding: 10px;
             text-align: center;
             transition: transform 0.3s ease;
+            margin-bottom: 20px; /* Добавляем отступ снизу для элементов */
         }
 
         .image-item:hover {
@@ -117,8 +119,22 @@
 
         /* Адаптивность для мобильных устройств */
         @media (max-width: 768px) {
+            nav ul {
+                display: flex;
+                flex-direction: column; /* Меняем направление для мобильных устройств */
+            }
+
+            nav ul li {
+                margin: 10px 0; /* Меньше отступы для мобильных устройств */
+            }
+
             .image-item {
                 width: 100%; /* На мобильных устройствах изображения занимают всю ширину */
+            }
+
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
             }
         }
 
@@ -222,10 +238,10 @@
                 <h2>госпожа, сигма вумен, элита ступенек. женщина мечта и сама скромность</h2>
             </div>
         </div>
-         <!-- Кнопка стрелки -->
+   <!-- Кнопка стрелки -->
         <button id="scrollToTop">&#8593;</button>
 
-    <script>
+        <script>
         // Получаем кнопку стрелки
         const scrollToTopButton = document.getElementById("scrollToTop");
 
@@ -245,7 +261,7 @@
                 behavior: "smooth"
             });
         };
-    </script>
+        </script>
 
         <h1>учасники кланів</h1>
 
@@ -323,17 +339,7 @@
         <h2>Меня пугает лишь мысль о том, что однажды я перестану заниматься хуйнёй</h2>
         </div>
     </div>
-        <div class="image-container">
-
-        <div class="image-item">
-        <img src="https://github.com/misha291/STUPENKU/blob/main/img/photo_1_2024-12-27_11-05-07.jpg?raw=true">
-        <h2>король соло шд</h2>
-        </div>
-            <div class="image-item">
-        <img src="https://github.com/stypenku/stypenku/blob/main/img/photo_1_2024-12-28_17-57-37.jpg?raw=true">
-        <h2>Не верь словам наркомана, слезам шлюхи и улыбки прокурора</h2>
-    </div>
-            <div class="image-container">
+                <div class="image-container">
 <div class="image-item">
     <img src="https://github.com/stypenku/stypenku/blob/main/img/12345798.jpg?raw=true">
     <h2>В чем разница между восьмилетним мной и евреем? Я вернулся домой с лагеря.</h2>
@@ -347,20 +353,34 @@
     <p>Ценим мы один лишь клад</p>
     <p>Поднять поряду и разблокировать voice-chat</p>
 </div>
-            </div>
+</div>
+        <div class="image-container">
+
+        <div class="image-item">
+        <img src="https://github.com/misha291/STUPENKU/blob/main/img/photo_1_2024-12-27_11-05-07.jpg?raw=true">
+        <h2>король соло шд</h2>
+        </div>
+        
+    </div>
+            <div class="image-item">
+        <img src="https://github.com/stypenku/stypenku/blob/main/img/photo_1_2024-12-28_17-57-37.jpg?raw=true">
+        <h2>Не верь словам наркомана, слезам шлюхи и улыбки прокурора</h2>
+    </div>
+    </div>
 
 
         
     </main>
-   <footer>
-  <div class="footer-container">
-    <p>© 2024 СТУПЕНЬКИ</p>
-    <ul>
-      <li><a href="https://discord.gg/eMkj4NUP" target="_blank" rel="noopener noreferrer">Discord</a></li>
-      <li><a href="t.me/STYPENKUkeks" target="_blank" rel="noopener noreferrer">Telegram(Канал)</a></li>
-      <li><a href="t.me/stypenku" target="_blank" rel="noopener noreferrer">Telegram (Чат)</a></li>
-    </ul>
-  </div>
-</footer> 
+   <!-- Статичный футер -->
+    <footer>
+      <div class="footer-container">
+        <p>© 2024 СТУПЕНЬКИ</p>
+        <ul>
+          <li><a href="https://discord.gg/eMkj4NUP" target="_blank" rel="noopener noreferrer">Discord</a></li>
+          <li><a href="t.me/STYPENKUkeks" target="_blank" rel="noopener noreferrer">Telegram(Канал)</a></li>
+          <li><a href="t.me/stypenku" target="_blank" rel="noopener noreferrer">Telegram (Чат)</a></li>
+        </ul>
+      </div>
+    </footer>
 </body>
 </html>
