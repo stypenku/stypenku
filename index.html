@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Головна сторінка</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Сброс отступов по умолчанию */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Основной стиль для body */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Вертикальная компоновка */
+            align-items: center; /* Центрируем содержимое по горизонтали */
+            justify-content: flex-start;
+            min-height: 100vh;
+            background-image: url('https://github.com/misha291/STUPENKU/blob/main/img/photo_1_2024-12-28_18-27-04.jpg?raw=true');
+            background-size: cover;
+            background-position: center center;
+        }
+
+        /* Навигация */
+        header {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 0;
+            position: absolute;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style-type: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #f4f4f4;
+        }
+
+        /* Основной контент */
+        main {
+            max-width: 1000px;
+            margin-top: 100px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #000000;
+        }
+
+        /* Контейнер для изображений */
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        .image-item {
+            width: 48%; /* Делим доступное пространство пополам */
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .image-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .image-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .image-item h2 {
+            font-size: 16px;
+            color: #000000;
+            margin-top: 10px;
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 768px) {
+            .image-item {
+                width: 100%; /* На мобильных устройствах изображения занимают всю ширину */
+            }
+        }
+
+        /* Стили для стрелки */
+        #scrollToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            font-size: 30px;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            cursor: pointer;
+            display: none; /* Изначально скрыта */
+            z-index: 1000; /* Чтобы кнопка была сверху */
+        }
+
+        #scrollToTop:hover {
+            background-color: #0056b3;
+        }
+
+        /* Пространство для контента, чтобы кнопка не перекрывала контент */
+        main {
+            padding-bottom: 80px;
+        }
+    </style>
+    <style>
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footer-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .footer-container li {
+    display: inline;
+    margin: 0 10px;
+  }
+
+  .footer-container a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .footer-container a:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+    <!-- Навигация -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="about.html">Про нас</a></li>
+                <li><a href="contact.html">Клуби</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <h1>Вітаємо на головній сторінці!</h1>
+        <p>Це основна сторінка нашого сайту, де ви знайдете інформацію про всі наші клуби "СТУПЕНЬКИ".</p>
+        
+        <h1>Дошка пошани</h1>
+        <p>Основники кланів</p>
+        
+        <div class="image-container">
+            <div class="image-item ">
+                <img src="https://github.com/misha291/STUPENKU/blob/main/img/photo_7_2024-12-26_18-54-12.jpg?raw=true">
+                <h2>чел олицетворяющий слово "великолепие". человек абсолют</h2>
+            </div>
+
+            <div class="image-item">
+                <img src="https://github.com/misha291/STUPENKU/blob/main/img/photo_2_2024-12-26_18-54-12.jpg?raw=true">
+                <h2>Любовь порождает страдания, порождает ненависть и дает познать боль.</h2>
+            </div>
+            </div>
+
+            <div class="image-container">
+
+            <div class="image-item">
+                <img src="https://github.com/misha291/STUPENKU/blob/main/img/photo_1_2024-12-26_18-54-12.jpg?raw=true">
+                <h2>за ступеньки и двор стреляю в упор</h2>
+            </div>
+
+            <div class="image-item">
+                <img src="https://github.com/misha291/STUPENKU/blob/main/img/photo_3_2024-12-26_19-00-57.jpg?raw=true">
+                <h2>госпожа, сигма вумен, элита ступенек. женщина мечта и сама скромность</h2>
+            </div>
+        </div>
+         <!-- Кнопка стрелки -->
+        <button id="scrollToTop">&#8593;</button>
+
+    <script>
+        // Получаем кнопку стрелки
+        const scrollToTopButton = document.getElementById("scrollToTop");
+
+        // Показать или скрыть кнопку в зависимости от прокрутки страницы
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopButton.style.display = "block";
+            } else {
+                scrollToTopButton.style.display = "none";
+            }
+        };
+
+        // Плавный скролл наверх
+        scrollToTopButton.onclick = function() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        };
+    </script>
+
+        <h1>учасники кланів</h1>
+
+        <div class="image-container">
+
+        <div class="image-item">
+        <img src="https://github.com/misha291/STUPENKU/blob/main/img/photo_6_2024-12-26_18-54-12.jpg?raw=true">
+        <h2>Никто не сосет больше чем стелька</h2>
+        </div>
+
+        <div class="image-item">
+        <img src="https://github.com/misha291/STUPENKU/blob/main/img/photo_5_2024-12-26_18-54-12.jpg?raw=true">
+        <h2>Истинная красота заключается не в том, как мы выглядим, а в том, как мы относимся к миру и людям вокруг нас.</h2>
+        </div>
+        </div>
+        <div class="image-container">
+
+        <div class="image-item">
+        <img src="https://github.com/misha291/STUPENKU/blob/main/img/photo_4_2024-12-26_19-00-57.jpg?raw=true">
+        <h2>Мне часто целовали ноги, но я не протестовал, я знал,что достоин этого</h2>
+        </div>
+
+        <div class="image-item">
+        <img src="https://github.com/misha291/STUPENKU/blob/main/img/photo_3_2024-12-26_18-54-12.jpg?raw=true">
+        <h2>Кубки - счастье. Гемы - богатство. Ступеньки - величие.</h2>
+        </div>
+        </div>
+        <div class="image-container">
+
+        <div class="image-item">
+        <img src="https://github.com/misha291/STUPENKU/blob/main/img/photo_2_2024-12-26_19-00-57.jpg?raw=true">
+        <h2>место, где кто-то все ещё думает о тебе, – это место которое, ты можешь назвать домом</h2>
+        </div>
+
+        <div class="image-item">
+        <img src="https://github.com/misha291/STUPENKU/blob/main/img/photo_1_2024-12-26_19-00-57.jpg?raw=true">
+        <h2><br>Стелька пидорас</br>
+        <br>Я ебал барана</br>
+    <br>Георгиан пьёт квас</br>
+<br>Игорь греет баню</br></h2>
+</div>
+</div>
+<div class="image-container">
+        <div class="image-item">
+        <img src="https://github.com/misha291/STUPENKU/blob/main/img/photo_1_2024-12-26_21-27-29.jpg?raw=true">
+        <h2>прокладываем путь себе штыками и картечью</h2>
+        </div>
+
+        <div class="image-item">
+        <img src="https://github.com/misha291/STUPENKU/blob/main/img/photo_4_2024-12-26_18-54-12.jpg?raw=true">
+        <h2>Ты гей</h2>
+        </div>
+        </div>
+        <div class="image-container">
+
+        <div class="image-item">
+        <img src="https://github.com/misha291/STUPENKU/blob/main/img/photo_1_2024-12-26_20-48-08.jpg?raw=true">
+        <h2>человек который делает вино, необязательно будет алкоголиком</h2>
+        </div>
+
+        <div class="image-item">
+        <img src="https://github.com/misha291/STUPENKU/blob/main/img/photo_1_2024-12-26_21-45-10.jpg?raw=true">
+        <h2>Мечта это не достигнутая цель</h2>
+        </div>
+        </div>
+        <div class="image-container">
+
+        <div class="image-item">
+        <img src="https://github.com/misha291/STUPENKU/blob/main/img/photo_1_2024-12-26_22-03-20.jpg?raw=true">
+        <h2>Гас не тормоз, куб не треугольник, а стелька просто секс кукла</h2>
+        </div>
+
+        <div class="image-item">
+        <img src="https://github.com/misha291/STUPENKU/blob/main/img/photo_1_2024-12-27_10-44-26.jpg?raw=true">
+        <h2>Меня пугает лишь мысль о том, что однажды я перестану заниматься хуйнёй</h2>
+        </div>
+    </div>
+        <div class="image-container">
+
+        <div class="image-item">
+        <img src="https://github.com/misha291/STUPENKU/blob/main/img/photo_1_2024-12-27_11-05-07.jpg?raw=true">
+        <h2>король соло шд</h2>
+        </div>
+    </div>
+
+
+        
+    </main>
+   <footer>
+  <div class="footer-container">
+    <p>© 2024 СТУПЕНЬКИ</p>
+    <ul>
+      <li><a href="https://discord.gg/eMkj4NUP" target="_blank" rel="noopener noreferrer">Discord</a></li>
+      <li><a href="t.me/STYPENKUkeks" target="_blank" rel="noopener noreferrer">Telegram(Канал)</a></li>
+      <li><a href="t.me/stypenku" target="_blank" rel="noopener noreferrer">Telegram (Чат)</a></li>
+    </ul>
+  </div>
+</footer> 
+</body>
+</html>
