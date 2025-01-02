@@ -190,8 +190,41 @@
         .footer-container a:hover {
             text-decoration: underline;
         }
+        /* Навигация */
+header {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 0;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex; /* Меняем на flex для горизонтального расположения */
+    justify-content: center; /* Центрируем элементы */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px; /* Отступы между кнопками */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #f4f4f4;
+}
 
     </style>
+
 </head>
 <body>
 
@@ -348,7 +381,7 @@
     <img src="https://github.com/stypenku/stypenku/blob/main/img/photo_1_2025-01-02_19-37-53.jpg?raw=true">
     <h2>Уже и в Доте выпал снег</h2>
     <p>За Dota Plus всё больше чек</p>
-    <p>Мы все в афиге конкретно как мой новый саундтрек</p>
+    <p>Мы все в ахуе конкретно как мой новый саундтрек</p>
     <p>Мы потеем не для званий</p>
     <p>Ценим мы один лишь клад</p>
     <p>Поднять поряду и разблокировать voice-chat</p>
@@ -381,6 +414,9 @@
           <li><a href="t.me/stypenku" target="_blank" rel="noopener noreferrer">Telegram (Чат)</a></li>
         </ul>
       </div>
+    </footer>
+</body>
+</html>
     </footer>
 </body>
 </html>
