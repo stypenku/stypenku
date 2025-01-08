@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Заблоковані учасники</title>
     <style>
-        /* Сброс отступов и стандартизация */
+        /* Сброс отступов по умолчанию */
         * {
             margin: 0;
             padding: 0;
@@ -15,22 +15,28 @@
         /* Основной стиль для body */
         body {
             font-family: 'Arial', sans-serif;
+            line-height: 1.6;
             background-color: #f4f4f4;
+            color: #333;
+            padding: 0;
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Вертикальная компоновка */
+            align-items: center; /* Центрируем содержимое по горизонтали */
+            justify-content: center; /* Центрируем по вертикали */
             min-height: 100vh;
-            padding: 20px;
+            background-image: url('https://github.com/misha291/STUPENKU/blob/main/img/photo_1_2024-12-28_18-27-04.jpg?raw=true');
+            background-size: cover;
+            background-position: center center;
         }
 
-        /* Стили для навигации */
+        /* Навигация */
         header {
             width: 100%;
-            background-color: #333;
-            padding: 10px 0;
-            position: fixed;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px 0;
+            position: absolute;
             top: 0;
-            left: 0;
-            z-index: 100;
+            z-index: 10;
         }
 
         nav ul {
@@ -40,13 +46,13 @@
 
         nav ul li {
             display: inline-block;
-            margin: 0 15px;
+            margin: 0 40px;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 30px; /* Увеличиваем размер текста */
             font-weight: bold;
         }
 
@@ -54,96 +60,119 @@
             color: #f4f4f4;
         }
 
-        /* Контейнер для страницы */
-        .container {
-            margin-top: 100px;
+        /* Основной контент */
+        main {
+            max-width: 1200px; /* Увеличиваем максимальную ширину */
+            margin-top: 150px; /* Увеличиваем отступ сверху */
             text-align: center;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* Заголовок */
-        h1 {
-            margin-bottom: 30px;
-            font-size: 36px;
-            color: #333;
+        h1, h2 {
+            color: #000000;
+            margin-bottom: 40px; /* Увеличиваем отступы */
+            font-size: 50px; /* Увеличиваем размер заголовка */
         }
 
-        /* Стили для списка заблокированных пользователей */
+        p {
+            font-size: 24px; /* Увеличиваем размер текста */
+            margin-bottom: 25px; /* Увеличиваем отступ */
+            color: #000000;
+        }
+
+        /* Контейнер для изображений */
         .user-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
+            display: flex; /* Используем flexbox */
+            flex-direction: row; /* Горизонтальное направление */
+            flex-wrap: wrap; /* Разрешаем перенос элементов */
+            gap: 40px; /* Увеличиваем отступы между элементами */
+            padding: 40px;
+            margin-top: 100px;
+            width: 90%; /* Сужаем контейнер */
+            overflow-y: auto; /* Добавляем вертикальную прокрутку */
+            justify-content: center; /* Центрируем элементы */
         }
 
         .user-item {
             background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+            border-radius: 15px; /* Увеличиваем скругление */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            padding: 40px;
             text-align: center;
-            padding: 20px;
             transition: transform 0.3s ease;
+            width: 280px; /* Увеличиваем ширину карточек */
+            margin: 0 auto; /* Центрируем карточки */
         }
 
         .user-item:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
         }
 
         .user-item img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
+            max-width: 100%; /* Ограничиваем максимальную ширину изображения */
+            height: auto; /* Высота автоматически подстраивается по ширине */
+            object-fit: contain; /* Сохраняем соотношение сторон */
+            margin-bottom: 25px;
+            border-radius: 10px; /* Добавляем скругление к изображениям */
         }
 
         .user-item h3 {
-            margin: 10px 0;
-            font-size: 20px;
+            margin: 20px 0;
+            font-size: 30px; /* Увеличиваем размер текста */
             color: #333;
         }
 
         .user-item p {
-            font-size: 16px;
+            font-size: 22px; /* Увеличиваем размер текста */
             color: #555;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
         }
 
+        /* Стиль для заблокированного статуса */
         .status-blocked {
-            color: #e74c3c;
+            color: red; /* Красный цвет для заблокированного статуса */
             font-weight: bold;
+            font-size: 24px; /* Увеличиваем размер текста */
         }
 
         /* Адаптивность для мобильных устройств */
         @media (max-width: 768px) {
             h1 {
-                font-size: 28px;
+                font-size: 40px; /* Уменьшаем размер на мобильных устройствах */
             }
 
             nav ul li {
-                margin: 0 10px;
+                margin: 0 20px;
             }
 
             .user-list {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                flex-direction: column; /* Оставляем вертикальную компоновку на мобильных */
+                width: 100%;
+            }
+
+            .user-item {
+                width: 90%; /* Ширина карточек на мобильных */
+                padding: 20px;
             }
 
             .user-item img {
-                width: 80px;
-                height: 80px;
+                width: 100%;
+                height: auto;
             }
 
             .user-item h3 {
-                font-size: 18px;
+                font-size: 24px;
             }
 
             .user-item p {
-                font-size: 14px;
+                font-size: 18px;
             }
         }
-
     </style>
-</head>
+</head>ц
 <body>
 
     <!-- Навигация -->
@@ -153,77 +182,85 @@
                 <li><a href="index.html">Головна</a></li>
                 <li><a href="about.html">Про нас</a></li>
                 <li><a href="contact.html">Клуби</a></li>
+                <li><a href="post.html">Ізгої клану</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Основной контент -->
-    <div class="container">
+    <main>
         <h1>Заблоковані учасники клана</h1>
 
         <!-- Список заблокированных пользователей -->
         <div class="user-list">
             <!-- 18 квадратов для пользователей -->
             <div class="user-item">
-                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Іван Петренко">
-                <h3></h3>
-                <p>Причина блокування:</p>
+                <img src="https://github.com/stypenku/stypenku/blob/main/img/photo_10_2025-01-05_12-09-36.jpg?raw=true" >
+                <h3>zxcfredabear</h3>
+                <p>Причина блокування: зрада</p>
                 <p class="status-blocked">Заблокований</p>
             </div>
 
             <div class="user-item">
-                <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Марія Сидоренко">
-                <h3></h3>
-                <p>Причина блокування: </p>
+                <img src="https://github.com/stypenku/stypenku/blob/main/img/photo_5_2025-01-05_12-09-36.jpg?raw=true" >
+                <h3>dropnimorf</h3>
+                <p>Причина блокування: зрада</p>
                 <p class="status-blocked">Заблокований</p>
             </div>
 
             <div class="user-item">
-                <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Олександр Мельник">
-                <h3></h3>
-                <p>Причина блокування: </p>
+                <img src="https://github.com/stypenku/stypenku/blob/main/img/photo_6_2025-01-05_12-09-36.jpg?raw=true" >
+                <h3>Himars M142</h3>
+                <p>Причина блокування: зрада</p>
                 <p class="status-blocked">Заблокований</p>
             </div>
 
             <div class="user-item">
-                <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Юлія Дерев'янко">
-                <h3></h3>
-                <p>Причина блокування: </p>
+                <img src="https://github.com/stypenku/stypenku/blob/main/img/photo_2_2025-01-05_12-09-36.jpg?raw=true" >
+                <h3>Яички Бо</h3>
+                <p>Причина блокування: переманювання гравців, токсичність</p>
                 <p class="status-blocked">Заблокований</p>
             </div>
 
             <div class="user-item">
-                <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="Михайло Левченко">
-                <h3></h3>
-                <p>Причина блокування: </p>
+                <img src="https://github.com/stypenku/stypenku/blob/main/img/photo_1_2025-01-05_12-09-36.jpg?raw=true" >
+                <h3>Олежка 777</h3>
+                <p>Причина блокування: токсичність, вгроза снести клан</p>
                 <p class="status-blocked">Заблокований</p>
             </div>
 
             <div class="user-item">
-                <img src="https://randomuser.me/api/portraits/women/6.jpg" alt="Олена Коваленко">
-                <h3></h3>
-                <p>Причина блокування: </p>
+                <img src="https://github.com/stypenku/stypenku/blob/main/img/photo_9_2025-01-05_12-09-36.jpg?raw=true" >
+                <h3>Im Dubai</h3>
+                <p>Причина блокування: зрада, переманювання гравців</p>
                 <p class="status-blocked">Заблокований</p>
             </div>
 
             <div class="user-item">
-                <img src="https://randomuser.me/api/portraits/men/7.jpg" alt="Роман Іванов">
-                <h3></h3>
-                <p>Причина блокування: </p>
+                <img src="https://github.com/stypenku/stypenku/blob/main/img/photo_3_2025-01-05_12-09-36.jpg?raw=true" >
+                <h3>TF|mvwxg</h3>
+                <p>Причина блокування: зрада, токсичність</p>
                 <p class="status-blocked">Заблокований</p>
             </div>
 
             <div class="user-item">
-                <img src="https://randomuser.me/api/portraits/women/8.jpg" alt="Катерина Чорна">
-                <h3></h3>
-                <p>Причина блокування: </p>
+                <img src="https://github.com/stypenku/stypenku/blob/main/img/photo_4_2025-01-05_12-09-36.jpg?raw=true" >
+                <h3>zadrotikk</h3>
+                <p>Причина блокування: сильна токсичність, зрада</p>
                 <p class="status-blocked">Заблокований</p>
             </div>
 
             <div class="user-item">
-                <img src="https://randomuser.me/api/portraits/men/9.jpg" alt="Сергій Мартиненко">
-                <h3></h3>
-                <p>Причина блокування: </p>
+                <img src="https://github.com/stypenku/stypenku/blob/main/img/photo_8_2025-01-05_12-09-36.jpg?raw=true" >
+                <h3>LORD</h3>
+                <p>Причина блокування: переманювання гравців, токсичність </p>
+                <p class="status-blocked">Заблокований</p>
+            </div>
+
+            <div class="user-item">
+                <img src="https://github.com/stypenku/stypenku/blob/main/img/photo_7_2025-01-05_12-09-36.jpg?raw=true" >
+                <h3>Svp_Love</h3>
+                <p>Причина блокування: зрада </p>
                 <p class="status-blocked">Заблокований</p>
             </div>
 
